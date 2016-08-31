@@ -40,7 +40,7 @@ public class HelloCourseController
     mv.addObject( "course", course );
 
     // Load some data and put it in the model
-    List<CourseMembership> members = _membershipLoader.loadByCourseId( course.getId() );
+    List<CourseMembership> members = CourseMembershipDbLoader.Default.getInstance().loadByCourseId( course.getId() );
     List<User> users = new LinkedList<User>();
     for ( CourseMembership member : members )
     {
