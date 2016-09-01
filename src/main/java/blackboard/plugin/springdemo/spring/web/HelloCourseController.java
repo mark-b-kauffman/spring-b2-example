@@ -47,7 +47,15 @@ public class HelloCourseController
       users.add( _userLoader.loadById( member.getUserId() ) );
     }
     mv.addObject( "users", users );
-    
+
+    if (users.size() > 0){ // demonstrate the use of loadByCourseAndUserId
+      CourseMembership member2 = CourseMembershipDbLoader.Default.getInstance().loadByCourseAndUserId( course.getId(), users.get(0).getId() );
+      User user2 = null;
+  
+        user2 = _userLoader.loadById( member2.getUserId() );
+
+      mv.addObject("user2", user2);
+    }// end demonstrate the use of loadByCourseAndUserId
     return mv;
   }
 

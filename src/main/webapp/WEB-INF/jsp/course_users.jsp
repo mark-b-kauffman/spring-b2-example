@@ -6,13 +6,19 @@
 
 <html>
 <body>
-<pre>
-Course: ${course.courseId}
+<pre><u>
+Course: ${course.courseId} </u>
 <br/>
-Users:<br/>
+<u>Users:</u><br/>
 <c:forEach items="${users}" var="element">
     <c:out value="${element.userName}"/><br/>
 </c:forEach>
+
+<br/>
+<u>The single user obtained by loadByCourseAndUserId:</u><br/>
+
+    <c:out value="${user2.userName}"/><br/>
+
 </pre>
 </body>
 </html>
